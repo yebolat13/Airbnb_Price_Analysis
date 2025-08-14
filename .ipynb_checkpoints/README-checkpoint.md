@@ -50,7 +50,7 @@ The R² values for the Random Forest model show that it can explain a substantia
 
 The following chart visually summarizes the performance comparison:
 
-![Model Performance Comparison](assets/V1_V2_comparison.png)
+![Model Performance Comparison](assets/V1_V2_comparison.PNG)
 
 ## Future Work
 
