@@ -49,3 +49,30 @@ def evaluate_model(y_true, y_pred):
     print("\n--- Model Evaluation ---")
     print(f"Root Mean Squared Error (RMSE): {rmse:.2f}")
     print(f"R-squared (R²): {r2:.2f}")
+
+def train_and_evaluate_model(model, X_train, X_test, y_train, y_test):
+    """
+    Trains a given model on training data and evaluates its performance on test data.
+
+    Args:
+        model: The machine learning model to be trained.
+        X_train (pd.DataFrame): Training features.
+        X_test (pd.DataFrame): Testing features.
+        y_train (pd.Series): Training target.
+        y_test (pd.Series): Testing target.
+
+    Returns:
+        tuple: A tuple containing predictions (y_pred) and evaluation metrics (rmse, r2).
+    """
+    print(f"\nTraining {type(model).__name__} model...")
+    model.fit(X_train, y_train)
+    print("Training complete.")
+    
+    y_pred = model.predict(X_test)
+    
+    evaluate_model(y_test, y_pred)
+    
+    rmse = np.sqrt(mean_squared_error(y_test, y_pred))
+    r2 = r2_score(y_test, y_pred)
+    
+    return y_pred, rmse, r2
