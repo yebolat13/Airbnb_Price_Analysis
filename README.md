@@ -1,77 +1,99 @@
-# Airbnb Price Prediction in Major European Cities
+# Airbnb Price Prediction Case Study: Berlin, Istanbul & Munich
 
 ## Project Overview
 
-This project is a data science case study focused on predicting Airbnb rental prices in three major European cities: **Berlin, Istanbul, and Munich**. The primary goal is to demonstrate a complete data science workflow, starting with a simple baseline model and progressing to a more robust, advanced model to improve predictive performance.
+This project is a comprehensive machine learning case study aimed at predicting Airbnb rental prices in three major European cities: Berlin, Istanbul, and Munich. The primary goal was to explore the factors influencing pricing in different markets and to develop a highly accurate predictive model through an iterative and rigorous data science workflow.
 
-The project showcases skills in data cleaning, exploratory data analysis (EDA), modular code design, and iterative machine learning model development and evaluation.
+The entire project demonstrates the full lifecycle of a machine learning initiative, from initial data cleaning and exploratory analysis to advanced model development and final performance evaluation.
 
-## Project Structure
+## Table of Contents
 
-The repository is organized into a modular and easy-to-follow structure:
+-   [Project Goal](#project-goal)
+-   [Methodology](#methodology)
+-   [Project Structure](#project-structure)
+-   [Key Findings & Final Results](#key-findings--final-results)
+-   [Future Work](#future-work)
+-   [Technologies Used](#technologies-used)
 
--   `data/`: Contains the raw and processed Airbnb datasets for each city.
--   `notebooks/`: Contains Jupyter Notebooks that document the project's entire workflow:
-    -   `1_Data_Exploration.ipynb`: Initial inspection and understanding of the raw data.
-    -   `2_Data_Cleaning_and_EDA.ipynb`: Data cleaning, preprocessing, and exploratory data analysis.
-    -   `3_Berlin_Price_Prediction.ipynb`: Baseline (V1) price prediction model for Berlin using Linear Regression.
-    -   `4_Istanbul_Price_Prediction.ipynb`: Baseline (V1) price prediction model for Istanbul.
-    -   `5_Munich_Price_Prediction.ipynb`: Baseline (V1) price prediction model for Munich.
-    -   `6_Summary_and_Conclusion.ipynb`: Final analysis and summary of the baseline models.
-    -   `7_Advanced_Modeling_RandomForest.ipynb`: Advanced (V2) price prediction model for Berlin using Random Forest.
-    -   `8_Advanced_Modeling_RandomForest_Istanbul.ipynb`: Advanced (V2) price prediction model for Istanbul.
-    -   `9_Advanced_Modeling_RandomForest_Munich.ipynb`: Advanced (V2) price prediction model for Munich.
-    -   `10_Final_Analysis_and_V2_Summary.ipynb`: Comprehensive comparison and conclusion of all models.
-    -   `11_Business_Insights_and_Future_Work.ipynb`: **Business-oriented analysis, feature importance, and strategic planning.**
--   `utils/`: A folder containing reusable Python functions for data loading, preprocessing, and model evaluation, ensuring the codebase is modular and clean.
+## Project Goal
+
+The main objective was to build a machine learning model capable of accurately predicting the price of Airbnb listings. I aimed to not only achieve high predictive performance but also to gain insights into which features drive pricing in diverse urban environments.
 
 ## Methodology
 
-The project follows a two-stage modeling approach:
+My approach was an iterative process of model refinement:
 
-1.  **V1 - Baseline Modeling:** A simple **Linear Regression** model was chosen as the initial baseline. This phase focused on establishing a robust data pipeline and providing a point of comparison for more advanced models.
-2.  **V2 - Advanced Modeling:** Recognizing the limitations of the linear model, a **Random Forest Regressor** was implemented. This phase aimed to significantly improve predictive performance by using a more powerful algorithm capable of handling non-linear data.
+1.  **Data Collection & Cleaning:** I started with raw, publicly available Airbnb data for three cities. The data was cleaned to handle missing values, correct data types, and prepare it for analysis.
+2.  **Exploratory Data Analysis (EDA):** I performed a detailed analysis to understand data distributions, identify key features, and uncover initial correlations between features and price.
+3.  **Model Iterations:**
+    -   **V1: Baseline Model:** A simple Linear Regression model was implemented to establish a performance baseline.
+    -   **V2: Random Forest:** A more powerful Random Forest model was trained to improve upon the baseline.
+    -   **V3: Optimized Random Forest:** I performed hyperparameter tuning to optimize the Random Forest model for peak performance.
+    -   **Final Model: XGBoost:** Recognizing that the Random Forest model's performance had plateaued in some cities, I implemented XGBoost, a state-of-the-art gradient boosting algorithm, as the final solution.
 
-## Key Findings & Conclusions
+## Project Structure
 
-The project successfully demonstrated the importance of model selection in machine learning. The baseline Linear Regression model performed poorly, while the advanced Random Forest model delivered significant performance improvements across all cities.
+airbnb-price-prediction/
+├── notebooks/
+│   ├── 01_Data_Collection.ipynb
+│   ├── 02_Data_Cleaning.ipynb
+│   ├── 03_EDA_Berlin.ipynb
+│   ├── 04_EDA_Istanbul.ipynb
+│   ├── 05_EDA_Munich.ipynb
+│   ├── 06_Feature_Engineering.ipynb
+│   ├── 07_Baseline_Modeling_V1.ipynb
+│   ├── 08_Random_Forest_V2.ipynb
+│   ├── 09_Final_Analysis_and_V2_Summary.ipynb
+│   ├── 10_Business_Insights_and_Future_Work.ipynb
+│   ├── 11_Model_Optimization_and_Final_Evaluation.ipynb
+│   └── 12_XGBoost_Modeling_and_Final_Comparison.ipynb
+├── data/
+│   ├── raw/
+│   └── processed/
+├── utils/
+│   ├── data_loader.py
+│   └── model_utils.py
+└── README.md
 
-### Model Performance Comparison
+## Key Findings & Final Results
 
-| Model | City | RMSE | R² |
+My analysis and modeling efforts yielded several critical insights into Airbnb pricing and model performance.
+
+**Final Model Performance Summary: The Ultimate Comparison**
+
+| Model | City | R² Score | RMSE |
 |---|---|---|---|
-| Linear Regression (V1) | Berlin | 93.31 | 0.008 |
-| Linear Regression (V1) | Istanbul | 211.71 | 0.022 |
-| Linear Regression (V1) | Munich | 142.19 | -0.002 |
-| **Random Forest (V2)** | **Berlin** | **48.90** | **0.73** |
-| **Random Forest (V2)** | **Istanbul** | **177.69** | **0.31** |
-| **Random Forest (V2)** | **Munich** | **103.06** | **0.47** |
+| **Linear Regression (V1)** | Berlin | 0.008 | 93.31 |
+| | Istanbul | 0.022 | 211.71 |
+| | Munich | -0.002 | 142.19 |
+| **Random Forest (V2/V3)** | Berlin | 0.7133 | 50.17 |
+| | Istanbul | 0.3140 | 177.27 |
+| | Munich | 0.4684 | 103.57 |
+| **XGBoost (Final Model)** | **Berlin** | **0.7264** | **49.01** |
+| | **Istanbul** | **0.3368** | **174.30** |
+| | **Munich** | **0.5598** | **94.24** |
 
-The R² values for the Random Forest model show that it can explain a substantial portion of the price variance, particularly in Berlin. This validates the decision to move beyond the baseline model.
+### Insights
 
-The following chart visually summarizes the performance comparison:
+-   **Algorithmic Choice Matters:** The jump in performance from Linear Regression to the ensemble models was dramatic.
+-   **Validation and Optimization:** My hyperparameter tuning showed that the initial Random Forest model was already performing near its peak.
+-   **Knowing When to Iterate:** When the Random Forest model's performance plateaued, I implemented XGBoost, a superior algorithm for this type of data, which led to significant performance gains in Istanbul and Munich.
+-   **Data-Driven Problem Solving:** I encountered and resolved technical challenges, such as `ValueError`s, demonstrating my ability to diagnose and fix real-world coding issues.
+-   **Market-Specific Dynamics:** The lower R² scores in Istanbul and Munich, compared to Berlin, suggest that each city has unique market factors not captured by the current dataset, providing valuable business insight for future work.
 
-![Model Performance Comparison](assets/V1_V2_comparison.PNG)
+## Future Work
 
-### Key Insights from Analysis
-
-Based on the feature importance analysis and strategic planning in the final notebook, we derived the following actionable insights:
-
--   **Location is the Primary Driver:** The `neighbourhood` category consistently emerged as the most influential factor in pricing across all cities.
--   **Amenities and Room Type Matter:** Key features like `room_type` and the overall `amenities` offered in a listing are highly important, confirming that guests are willing to pay more for comfort and convenience.
--   **Modular Approach for Scalability:** The project's modular design allows for rapid expansion to new cities (e.g., Lisbon), enabling quick data onboarding and model adaptation.
-
-## Future Work & Strategic Planning
-
-This project provides a strong foundation for further enhancements and serves as a blueprint for a scalable business solution. Potential next steps include:
--   **Hyperparameter Tuning:** Optimizing the Random Forest model's parameters to achieve even better performance.
--   **Advanced Feature Engineering:** Incorporating more sophisticated features like sentiment analysis of reviews or time-series data to capture seasonal pricing trends.
--   **Exploring Other Advanced Models:** Testing other powerful algorithms like Gradient Boosting (XGBoost, LightGBM) to see if they can surpass the Random Forest model's performance.
+-   **Hyperparameter Tuning:** Conduct a full `GridSearchCV` or `RandomizedSearchCV` on the final XGBoost models for each city to potentially achieve marginal gains in performance.
+-   **Feature Engineering:** Explore more advanced feature engineering, such as creating new features from textual data in reviews or incorporating external data like local events and tourism statistics.
+-   **Deployment:** Develop a simple web application using Flask or Streamlit to deploy the final model and allow users to get real-time price predictions.
 
 ## Technologies Used
 
 -   Python
 -   Pandas
+-   NumPy
 -   Scikit-learn
+-   XGBoost
 -   Jupyter Notebook
--   Matplotlib & Seaborn
+-   Matplotlib
+-   Seaborn
