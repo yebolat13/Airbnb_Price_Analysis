@@ -33,7 +33,7 @@ My approach was an iterative process of model refinement:
 
 ## Project Structure
 
-airbnb-price-prediction/
+.
 ├── notebooks/
 │   ├── 01_Data_Collection.ipynb
 │   ├── 02_Data_Cleaning.ipynb
@@ -53,6 +53,7 @@ airbnb-price-prediction/
 ├── utils/
 │   ├── data_loader.py
 │   └── model_utils.py
+├── .gitignore
 └── README.md
 
 ## Key Findings & Final Results
