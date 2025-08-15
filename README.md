@@ -33,14 +33,6 @@ My approach was an iterative process of model refinement:
 
 ### Project Structure
 
-Anlıyorum, bu proje yapısı zaten README.md dosyanızda yer alıyor ve bu yapının daha düzgün görünmesini istiyorsunuz.
-
-GitHub'ın Markdown formatında, ağaç yapısı oluşturmanın en iyi yolu, karakterleri doğru bir şekilde hizalamaktır. Sizin paylaştığınız metindeki boşluk karakterleri (boşluk ve "tab" karakterlerinin karışımı) bazen düzgün görünmesini engelleyebilir.
-
-Aşağıdaki metni, README.md dosyanızdaki "Project Structure" bölümü ile değiştirin. Bu metin, GitHub'da tam olarak istediğiniz gibi profesyonel ve hizalı bir ağaç yapısı olarak görünecektir.
-
-### Project Structure
-
 .
 ├── notebooks/
 │   ├── 01_Data_Collection.ipynb
