@@ -31,7 +31,15 @@ My approach was an iterative process of model refinement:
     -   **V3: Optimized Random Forest:** I performed hyperparameter tuning to optimize the Random Forest model for peak performance.
     -   **Final Model: XGBoost:** Recognizing that the Random Forest model's performance had plateaued in some cities, I implemented XGBoost, a state-of-the-art gradient boosting algorithm, as the final solution.
 
-## Project Structure
+### Project Structure
+
+Anlıyorum, bu proje yapısı zaten README.md dosyanızda yer alıyor ve bu yapının daha düzgün görünmesini istiyorsunuz.
+
+GitHub'ın Markdown formatında, ağaç yapısı oluşturmanın en iyi yolu, karakterleri doğru bir şekilde hizalamaktır. Sizin paylaştığınız metindeki boşluk karakterleri (boşluk ve "tab" karakterlerinin karışımı) bazen düzgün görünmesini engelleyebilir.
+
+Aşağıdaki metni, README.md dosyanızdaki "Project Structure" bölümü ile değiştirin. Bu metin, GitHub'da tam olarak istediğiniz gibi profesyonel ve hizalı bir ağaç yapısı olarak görünecektir.
+
+### Project Structure
 
 .
 ├── notebooks/
