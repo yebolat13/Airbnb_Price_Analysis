@@ -22,6 +22,7 @@ The repository is organized into a modular and easy-to-follow structure:
     -   `8_Advanced_Modeling_RandomForest_Istanbul.ipynb`: Advanced (V2) price prediction model for Istanbul.
     -   `9_Advanced_Modeling_RandomForest_Munich.ipynb`: Advanced (V2) price prediction model for Munich.
     -   `10_Final_Analysis_and_V2_Summary.ipynb`: Comprehensive comparison and conclusion of all models.
+    -   `11_Business_Insights_and_Future_Work.ipynb`: **Business-oriented analysis, feature importance, and strategic planning.**
 -   `utils/`: A folder containing reusable Python functions for data loading, preprocessing, and model evaluation, ensuring the codebase is modular and clean.
 
 ## Methodology
@@ -37,11 +38,11 @@ The project successfully demonstrated the importance of model selection in machi
 
 ### Model Performance Comparison
 
-| Model                  | City     | RMSE        | R²          |
-|------------------------|----------|-------------|-------------|
-| Linear Regression (V1) | Berlin   | 93.31       | 0.008       |
-| Linear Regression (V1) | Istanbul | 211.71      | 0.022       |
-| Linear Regression (V1) | Munich   | 142.19      | -0.002      |
+| Model | City | RMSE | R² |
+|---|---|---|---|
+| Linear Regression (V1) | Berlin | 93.31 | 0.008 |
+| Linear Regression (V1) | Istanbul | 211.71 | 0.022 |
+| Linear Regression (V1) | Munich | 142.19 | -0.002 |
 | **Random Forest (V2)** | **Berlin** | **48.90** | **0.73** |
 | **Random Forest (V2)** | **Istanbul** | **177.69** | **0.31** |
 | **Random Forest (V2)** | **Munich** | **103.06** | **0.47** |
@@ -52,12 +53,20 @@ The following chart visually summarizes the performance comparison:
 
 ![Model Performance Comparison](assets/V1_V2_comparison.PNG)
 
-## Future Work
+### Key Insights from Analysis
 
-This project provides a strong foundation for further enhancements. Potential next steps include:
-* **Hyperparameter Tuning:** Optimizing the Random Forest model's parameters to achieve even better performance.
-* **Feature Engineering:** Creating more sophisticated features (e.g., interaction terms, time-based features) to provide the model with more information.
-* **Exploring Other Advanced Models:** Testing other powerful algorithms like Gradient Boosting (XGBoost, LightGBM) to see if they can surpass the Random Forest model's performance.
+Based on the feature importance analysis and strategic planning in the final notebook, we derived the following actionable insights:
+
+-   **Location is the Primary Driver:** The `neighbourhood` category consistently emerged as the most influential factor in pricing across all cities.
+-   **Amenities and Room Type Matter:** Key features like `room_type` and the overall `amenities` offered in a listing are highly important, confirming that guests are willing to pay more for comfort and convenience.
+-   **Modular Approach for Scalability:** The project's modular design allows for rapid expansion to new cities (e.g., Lisbon), enabling quick data onboarding and model adaptation.
+
+## Future Work & Strategic Planning
+
+This project provides a strong foundation for further enhancements and serves as a blueprint for a scalable business solution. Potential next steps include:
+-   **Hyperparameter Tuning:** Optimizing the Random Forest model's parameters to achieve even better performance.
+-   **Advanced Feature Engineering:** Incorporating more sophisticated features like sentiment analysis of reviews or time-series data to capture seasonal pricing trends.
+-   **Exploring Other Advanced Models:** Testing other powerful algorithms like Gradient Boosting (XGBoost, LightGBM) to see if they can surpass the Random Forest model's performance.
 
 ## Technologies Used
 
