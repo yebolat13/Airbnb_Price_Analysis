@@ -31,31 +31,6 @@ My approach was an iterative process of model refinement:
     -   **V3: Optimized Random Forest:** I performed hyperparameter tuning to optimize the Random Forest model for peak performance.
     -   **Final Model: XGBoost:** Recognizing that the Random Forest model's performance had plateaued in some cities, I implemented XGBoost, a state-of-the-art gradient boosting algorithm, as the final solution.
 
-### Project Structure
-
-.
-├── notebooks/
-│   ├── 01_Data_Collection.ipynb
-│   ├── 02_Data_Cleaning.ipynb
-│   ├── 03_EDA_Berlin.ipynb
-│   ├── 04_EDA_Istanbul.ipynb
-│   ├── 05_EDA_Munich.ipynb
-│   ├── 06_Feature_Engineering.ipynb
-│   ├── 07_Baseline_Modeling_V1.ipynb
-│   ├── 08_Random_Forest_V2.ipynb
-│   ├── 09_Final_Analysis_and_V2_Summary.ipynb
-│   ├── 10_Business_Insights_and_Future_Work.ipynb
-│   ├── 11_Model_Optimization_and_Final_Evaluation.ipynb
-│   └── 12_XGBoost_Modeling_and_Final_Comparison.ipynb
-├── data/
-│   ├── raw/
-│   └── processed/
-├── utils/
-│   ├── data_loader.py
-│   └── model_utils.py
-├── .gitignore
-└── README.md
-
 ## Key Findings & Final Results
 
 My analysis and modeling efforts yielded several critical insights into Airbnb pricing and model performance.
